@@ -10,7 +10,10 @@ import userRoutes from "./src/routes/user.js";
 const app = express();
 const PORT = process.env.PORT;
 
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true, // This allows cookies to be sent with requests
+}));
 app.use(express.json()); //for parsing application/json and content from DB
 app.use(cookieParser())
 
