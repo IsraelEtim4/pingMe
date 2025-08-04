@@ -30,7 +30,7 @@ function App() {
   
   return (
     <div className="">
-      <div className="my-10">
+      <div className="my-1">
         Welcome to PingMe App
       </div>
       <div>
