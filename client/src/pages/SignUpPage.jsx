@@ -42,7 +42,7 @@ const SignUpPage = () => {
           <div className="mb-4 flex items-center justify-start gap-2">
             <ShipWheelIcon className="size-9 text-primary" />
             <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider">
-              Streamify
+              PingMe
             </span>
           </div>
 
@@ -59,7 +59,7 @@ const SignUpPage = () => {
                 <div>
                   <h2 className="text-xl font-semibold">Create an Account</h2>
                   <p className="text-sm opacity-70">
-                    Join Streamify and start your language learning adventure!
+                    Join PingMe to showcase your skills and growth adventure!
                   </p>
                 </div>
 
@@ -71,7 +71,7 @@ const SignUpPage = () => {
                     </label>
                     <input
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="Israel Etim"
                       className="input input-bordered w-full"
                       value={signupData.username}
                       onChange={(e) => setSignupData({ ...signupData, username: e.target.value })}
@@ -85,7 +85,7 @@ const SignUpPage = () => {
                     </label>
                     <input
                       type="email"
-                      placeholder="john@gmail.com"
+                      placeholder="israel@gmail.com"
                       className="input input-bordered w-full"
                       value={signupData.email}
                       onChange={(e) => setSignupData({ ...signupData, email: e.target.value })}
@@ -106,7 +106,7 @@ const SignUpPage = () => {
                       required
                     />
                     <p className="text-xs opacity-70 mt-1">
-                      Password must be at least 6 characters long
+                      Password must be at least 8 characters long
                     </p>
                   </div>
 
@@ -155,9 +155,9 @@ const SignUpPage = () => {
             </div>
 
             <div className="text-center space-y-3 mt-6">
-              <h2 className="text-xl font-semibold">Connect with language partners worldwide</h2>
+              <h2 className="text-xl font-semibold">Connect with skilled partners worldwide</h2>
               <p className="opacity-70">
-                Practice conversations, make friends, and improve your language skills together
+                Practice communication, make friends, and improve your skills together
               </p>
             </div>
           </div>
