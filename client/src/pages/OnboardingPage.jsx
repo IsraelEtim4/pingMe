@@ -11,12 +11,12 @@ const OnboardingPage = () => {
   const queryClient = useQueryClient();
 
   const [formState, setFormState] = useState({
-    fullName: authUser?.fullName || "",
+    username: authUser?.username || "",
     bio: authUser?.bio || "",
     nativeLanguage: authUser?.nativeLanguage || "",
     learningLanguage: authUser?.learningLanguage || "",
     location: authUser?.location || "",
-    profilePic: authUser?.profilePic || "",
+    profilePicture: authUser?.profilePicture || "",
   });
 
   const { mutate: onboardingMutation, isPending } = useMutation({
@@ -38,8 +38,8 @@ const OnboardingPage = () => {
   };
 
   const handleRandomAvatar = () => {
-    const idx = Math.floor(Math.random() * 100) + 1; // 1-100 included
-    const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
+    const imageId = Math.floor(Math.random() * 100) + 1; // 1-100 included
+    const randomAvatar = `https://avatar.iran.liara.run/public/${imageId}.png`;
 
     setFormState({ ...formState, profilePic: randomAvatar });
     toast.success("Random profile picture generated!");
@@ -64,7 +64,7 @@ const OnboardingPage = () => {
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full">
-                    <CameraIcon className="size-12 text-base-content opacity-40" />
+                    {/* <CameraIcon className="size-12 text-base-content opacity-40" /> */}
                   </div>
                 )}
               </div>
@@ -103,7 +103,7 @@ const OnboardingPage = () => {
                 value={formState.bio}
                 onChange={(e) => setFormState({ ...formState, bio: e.target.value })}
                 className="textarea textarea-bordered h-24"
-                placeholder="Tell others about yourself and your language learning goals"
+                placeholder="Tell others about yourself, skills and your learning goals"
               />
             </div>
 
