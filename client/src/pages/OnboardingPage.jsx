@@ -3,7 +3,7 @@ import useAuthUser from "../hooks/useAuthUser.js";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { completeOnboarding } from "../lib/api.js";
-import { LoaderIcon, MapPinIcon, ShipWheelIcon, ShuffleIcon } from "lucide-react";
+import { LoaderIcon, MapPinIcon, ShipWheelIcon, ShuffleIcon, CameraIcon } from "lucide-react";
 import { LANGUAGES } from "../constants";
 
 const OnboardingPage = () => {
@@ -56,15 +56,15 @@ const OnboardingPage = () => {
             <div className="flex flex-col items-center justify-center space-y-4">
               {/* IMAGE PREVIEW */}
               <div className="size-32 rounded-full bg-base-300 overflow-hidden">
-                {formState.profilePic ? (
+                {formState.profilePicture ? (
                   <img
-                    src={formState.profilePic}
+                    src={formState.profilePicture}
                     alt="Profile Preview"
                     className="w-full h-full object-cover"
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full">
-                    {/* <CameraIcon className="size-12 text-base-content opacity-40" /> */}
+                    <CameraIcon className="size-12 text-base-content opacity-40" />
                   </div>
                 )}
               </div>
@@ -85,11 +85,11 @@ const OnboardingPage = () => {
               </label>
               <input
                 type="text"
-                name="fullName"
-                value={formState.fullName}
-                onChange={(e) => setFormState({ ...formState, fullName: e.target.value })}
+                name="username"
+                value={formState.username}
+                onChange={(e) => setFormState({ ...formState, username: e.target.value })}
                 className="input input-bordered w-full"
-                placeholder="Your full name"
+                placeholder="Your username"
               />
             </div>
 
