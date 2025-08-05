@@ -6,6 +6,7 @@ import "dotenv/config";
 import { connectDB } from "./src/lib/db.js";
 import authRoutes from "./src/routes/auth.js";
 import userRoutes from "./src/routes/user.js";
+import chatRoutes from "./src/routes/chat.js";
 
 const app = express();
 const PORT = process.env.PORT;
@@ -19,6 +20,7 @@ app.use(cookieParser())
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/chat", chatRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is listening!`);
