@@ -12,7 +12,7 @@ import { protectRoute } from "../middleware/auth.js";
 const router = express.Router();
 
 // Apply auth middleware to all routes below it
-router.use("/", protectRoute);
+router.use(protectRoute);
 
 router.get("/", getRecommendedUsers);
 router.get("/friends", getMyFriends);
